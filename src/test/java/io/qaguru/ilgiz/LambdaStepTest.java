@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.parameter;
 import static io.qameta.allure.Allure.step;
 
-public class GitHubIssueTestWithSteps {
+public class LambdaStepTest {
     private static final String BASE_URL = "http://github.com";
     private static final String ISSUES = "Issues";
     private static final String REPOSITORY = "eroshenkoam/allure-example";
