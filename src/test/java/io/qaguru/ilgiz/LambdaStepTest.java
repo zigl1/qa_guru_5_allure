@@ -21,7 +21,8 @@ public class LambdaStepTest {
     private static final String BASE_URL = "http://github.com";
     private static final String ISSUES = "Issues";
     private static final String REPOSITORY = "eroshenkoam/allure-example";
-    private static final String ISSUE_NUMBER ="#68";
+    private static final String ISSUE_NUMBER = "#68";
+
     @Test
     @Owner("IlgizKN")
     @Tags({@Tag("web"), @Tag("critical")})
@@ -40,16 +41,17 @@ public class LambdaStepTest {
             $(".header-search-input").sendKeys(REPOSITORY);
             $(".header-search-input").submit();
         });
-        step("Open repository " + REPOSITORY, () -> {
+        step("Go to repository " + REPOSITORY, () -> {
             $(By.linkText(REPOSITORY)).click();
         });
-        step("Open section " + ISSUES,() -> {
+        step("Open section " + ISSUES, () -> {
             $(withText(ISSUES)).click();
         });
         step("Verify that Issue with " + ISSUE_NUMBER + " exist", () -> {
             $(withText(ISSUE_NUMBER)).should(Condition.exist);
         });
     }
+
     @Test
     @Owner("IlgizKN")
     @Tags({@Tag("web"), @Tag("critical")})
@@ -68,10 +70,10 @@ public class LambdaStepTest {
             $(".header-search-input").sendKeys(REPOSITORY);
             $(".header-search-input").submit();
         });
-        step("Open repository " + REPOSITORY, () -> {
+        step("Go to repository " + REPOSITORY, () -> {
             $(By.linkText(REPOSITORY)).click();
         });
-        step("Open section " + ISSUES,() -> {
+        step("Open section " + ISSUES, () -> {
             $(withText(ISSUES)).click();
         });
         step("Verify that Issue with " + ISSUE_NUMBER + " exist", () -> {

@@ -10,7 +10,8 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class GitHubIssueTest {
     private static final String REPOSITORY = "eroshenkoam/allure-example";
-    private static final String ISSUE_NUMBER ="#68";
+    private static final String ISSUE_NUMBER = "#68";
+
     @Test
     public void testIssueSearch() {
 
