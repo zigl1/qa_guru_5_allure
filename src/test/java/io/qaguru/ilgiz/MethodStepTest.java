@@ -16,9 +16,5 @@ public class MethodStepTest {
         steps.goToRepositoryFromSearch(REPOSITORY);
         steps.openRepositoryIssues();
         steps.issueWithNumberShouldExist(ISSUE_NUMBER);
-
-
     }
-
-
 }

@@ -27,7 +27,5 @@ public class GitHubIssueTest {
         $(withText("Issues")).click();
 
         $(withText(ISSUE_NUMBER)).should(Condition.exist);
-
-
     }
 }
