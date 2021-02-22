@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class GitHubIssueTest {
-    private static final String repository = "eroshenkoam/allure-example";
+    private static final String REPOSITORY = "eroshenkoam/allure-example";
     private static final String ISSUE_NUMBER ="#68";
     @Test
     public void testIssueSearch() {
@@ -18,10 +18,10 @@ public class GitHubIssueTest {
         open("https://github.com/");
 
         $(".header-search-input").click();
-        $(".header-search-input").sendKeys(repository);
+        $(".header-search-input").sendKeys(REPOSITORY);
         $(".header-search-input").submit();
 
-        $(By.linkText("eroshenkoam/allure-example")).click();
+        $(By.linkText(REPOSITORY)).click();
 
         $(withText("Issues")).click();
 
