@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -37,9 +38,7 @@ public class LambdaStepTest {
             open(BASE_URL);
         });
         step("Looking for repository " + REPOSITORY, () -> {
-            $(".header-search-input").click();
-            $(".header-search-input").sendKeys(REPOSITORY);
-            $(".header-search-input").submit();
+            $(".header-search-input").setValue(REPOSITORY).submit();
         });
         step("Go to repository " + REPOSITORY, () -> {
             $(By.linkText(REPOSITORY)).click();
@@ -66,9 +65,7 @@ public class LambdaStepTest {
             open(BASE_URL);
         });
         step("Looking for repository " + REPOSITORY, () -> {
-            $(".header-search-input").click();
-            $(".header-search-input").sendKeys(REPOSITORY);
-            $(".header-search-input").submit();
+            $(".header-search-input").setValue(REPOSITORY).submit();
         });
         step("Go to repository " + REPOSITORY, () -> {
             $(By.linkText(REPOSITORY)).click();
@@ -76,8 +73,8 @@ public class LambdaStepTest {
         step("Open section " + ISSUES, () -> {
             $(withText(ISSUES)).click();
         });
-        step("Verify that Issue with " + ISSUE_NUMBER + " exist", () -> {
-            $(withText(ISSUE_NUMBER)).should(Condition.exist);
+        step("Verify that Issue with " + ISSUE_NUMBER + " visible", () -> {
+            $(withText(ISSUE_NUMBER)).shouldBe(visible);
         });
     }
 }
